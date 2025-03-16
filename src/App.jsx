@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
@@ -8,18 +8,28 @@ import Contact from "./Contact";
 import "./index.css";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <Router>
       <nav className="navbar">
         <span className="logo">My Portfolio</span>
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/contact">Contact</Link>
+        
+        {/* Mobile Menu Button */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
+
+        {/* Navigation Links */}
+        <div className={`nav-links ${menuOpen ? "show" : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
