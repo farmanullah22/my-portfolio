@@ -31,7 +31,7 @@ function Home() {
         <button className="about-button">Read More</button>
         </div>
       <div className="about-image">
-      <img src="/images/aboutimage.jpg" alt="Hero" />
+      <img src="./images/aboutimage.jpg" alt="Hero" />
       </div>
       </div>
     </section>
