@@ -1,0 +1,29 @@
+/* AboutHero.css */
+.about-Hero {
+    /* background-image: url('/images/Abouthero.jpg'); */
+    width: 100vw;
+    height: 70vh;
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+.herotext {
+    margin-top: 130px;
+    margin-left: 20px;
+    font-size: 55px;
+    width: 40vw;
+    color: #1e40af;
+}
+
+.aboutpara {
+    font-size: 21px;
+    margin-left: 24px;
+    width: 700px;
+}
+
+.myaboutimg  {
+    width: 50vw;
+    height: 60vh;
+    margin-top: 130px;
+    object-fit: cover;
+}
