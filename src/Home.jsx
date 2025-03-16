@@ -15,7 +15,7 @@ function Home() {
         <button className="cta-button">Read More</button>
       </div>
       <div className="hero-image">
-        <img src="/my-portfolio/images/farman.jpg" alt="Hero" />
+        <img src="./images/farman.jpg" alt="Hero" />
       </div>
     </section>
          
