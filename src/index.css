@@ -16,6 +16,7 @@ body {
   background: #1e40af;
   color: white;
   transition: background 0.3s;
+  position: relative;
 }
 
 .logo {
@@ -42,18 +43,31 @@ body {
   transform: scale(1.1);
 }
 
-/* Responsive Navbar */
+/* Mobile Navigation */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
+  
   .nav-links {
-      flex-direction: column;
-      width: 100%;
+    flex-direction: column;
+    width: 100%;
+    display: none;
   }
-  .nav-links a {
-      padding: 10px 0;
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
 
@@ -66,26 +80,27 @@ body {
   background: #f3f4f6;
   padding-bottom: 5rem;
   transition: all 0.3s ease-in-out;
+  flex-wrap: wrap;
 }
 
 .hero-content {
+  flex: 1;
   max-width: 50%;
 }
 
 .hero-span {
-  font-size: 7rem;
+  font-size: 5rem;
   color: #1e40af;
   transition: color 0.3s ease-in-out;
 }
 
 .hero-content h2 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   color: #1e40af;
-  margin-bottom: -20px;
 }
 
 .hero-content h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #1e40af;
 }
 
@@ -128,17 +143,17 @@ body {
 
 @media (max-width: 768px) {
   .hero {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-content {
-      max-width: 100%;
-      margin-bottom: 2rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
 
   .hero-image img {
-      max-width: 80%;
+    max-width: 80%;
   }
 }
 
@@ -148,6 +163,10 @@ body {
   padding: 60px 20px;
   background-color: #f4f4f4;
   transition: background 0.3s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
 }
 
 .service-card {
@@ -155,7 +174,6 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
